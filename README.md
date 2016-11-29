@@ -1,16 +1,19 @@
 # minimatch
 
 A minimal matching utility.
+一个极小的匹配工具
 
 [![Build Status](https://secure.travis-ci.org/isaacs/minimatch.svg)](http://travis-ci.org/isaacs/minimatch)
 
 
 This is the matching library used internally by npm.
+这是一个实际是npm使用的匹配库
 
 It works by converting glob expressions into JavaScript `RegExp`
 objects.
+它的功能是把glob表达式转化为JavaScript“正则表达式”对象。
 
-## Usage
+## Usage / 使用
 
 ```javascript
 var minimatch = require("minimatch")
@@ -20,13 +23,14 @@ minimatch("bar.foo", "*.bar") // false!
 minimatch("bar.foo", "*.+(bar|foo)", { debug: true }) // true, and noisy!
 ```
 
-## Features
+## Features / 特点
 
 Supports these glob features:
+支持这些glob特点：
 
-* Brace Expansion
-* Extended glob matching
-* "Globstar" `**` matching
+* Brace Expansion 大括号扩展
+* Extended glob matching 继承 glob matching
+* "Globstar" `**` matching Globstar “**”匹配
 
 See:
 
@@ -35,19 +39,22 @@ See:
 * `man 3 fnmatch`
 * `man 5 gitignore`
 
-## Minimatch Class
+## Minimatch Class / Minimatch类
 
 Create a minimatch object by instantiating the `minimatch.Minimatch` class.
+创造一个minimatch对象，通过实例化“minimatch.Minimatch”类
 
 ```javascript
 var Minimatch = require("minimatch").Minimatch
 var mm = new Minimatch(pattern, options)
 ```
 
-### Properties
+### Properties / 特性
 
 * `pattern` The original pattern the minimatch object represents.
+minimatch对象表现的原始模式
 * `options` The options supplied to the constructor.
+补充到结构函数的选项
 * `set` A 2-dimensional array of regexp or string expressions.
   Each row in the
   array corresponds to a brace-expanded pattern.  Each item in the row
